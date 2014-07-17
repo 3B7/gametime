@@ -1,0 +1,27 @@
+<div id="createBanter" class="panel right">
+  <h1>Create a roar</h1>
+  <p>
+    <form>
+      <textarea name="text" class="roarText"></textarea>
+      <input type="submit" value="Roar!">
+    </form>
+  </p>
+</div>
+<div id="roars" class="panel left">
+  <h1>Your GameTime Roar pofile</h1>
+  <div class="roarWrapper">
+      <img class="avatar" src="<%= @user.avatar_url %>">
+      <span class="name"><%= @user.name %></span> @<%= @user.name %>
+      <p>
+        XX Roar!
+      <span class="spacing">XX Followers</span>
+      <span class="spacing">XX Following</span>
+    </p>
+  </div>
+</div>
+<div class="panel left">
+  <h1>Your Roars so far...</h1>
+  <div class="roarWrapper">
+    Roars coming...
+  </div>
+</div>
