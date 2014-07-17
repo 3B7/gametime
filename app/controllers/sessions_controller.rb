@@ -5,17 +5,17 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by_username(params[:username])
     if user && user.authenticate(params[:password])
-      session[:userid] = user.id
-      redirect_to rooturl, notice: "Logged in!"
+      session[:user_id] = user.id
+      redirect_to root_url, notice: "Logged in!"
     else
       flash[:error] = "Wrong Username or Password."
-      redirect_to rooturl
+      redirect_to root_url
     end
   end
 
   def destroy
-    session[:userid] = nil
-    redirect_to rooturl, notice: "You have been logged out!"
+    session[:user_id] = nil
+    redirect_to root_url, notice: "You have been logged out!"
   end
 
 end

@@ -8,10 +8,10 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 
     if @user.save
-    session[:user_id] = @user.id
+      session[:user_id] = @user.id
       redirect_to @user, notice: "Thanks for your signing up. Now Roar!"
     else
-      redirect_to 'new'
+      render 'new'
     end
   end
 
