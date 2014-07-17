@@ -8,14 +8,15 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 
     if @user.save
-      redirect_to @user, notice: "Thanks for your signing up! Banter away [:"
+    session[:user_id] = @user.id
+      redirect_to @user, notice: "Thanks for your signing up. Now Roar!"
     else
       redirect_to 'new'
     end
   end
 
   def show
-    @user = User.new(params[:id])
+    @user = User.find(params[:id])
   end
   
 end
