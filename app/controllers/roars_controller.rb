@@ -7,7 +7,7 @@ class RoarsController < ApplicationController
 
   def create
     @roar = Roar.new(params[:roar])
-    @roar.user_id = current_user.id</p>
+    @roar.user_id = current_user.id
 
     if @roar.save
       redirect_to current_user
