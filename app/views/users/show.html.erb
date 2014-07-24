@@ -3,7 +3,7 @@
   <h1>Create a roar</h1>
   <p>
     <% form_for @roar do |f| %>
-      <%= f.textarea :content, class: 'roartext'%>
+      <%= f.text_area :content, class: 'roartext'%>
       <%= f.submit "Roar!" %>
     <% end %>
   </p>
