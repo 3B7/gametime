@@ -16,8 +16,8 @@
       <span class="name"><%= @user.name %></span> @<%= @user.username %>
       <p>
       <%= @user.roars.size %> Roars  
-      <span class="spacing"><%= user.followers.count %></span>
-      <span class="spacing"><%= user.followeds.count %></span>
+      <span class="spacing"><%= @user.followers.count %>Followers</span>
+      <span class="spacing"><%= @user.followeds.count %>Following</span>
     </p>
     <% if current_user and @user != current_user %>
       <% if current_user.following? @user %>
