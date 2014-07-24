@@ -1,5 +1,10 @@
 class RoarsController < ApplicationController
  
+  def index
+    @roars = Roar.all include: :user
+    @roar = Roar.new
+  end
+
   def create
     @roar = Roar.new(params[:roar])
     @roar.user_id = current_user.id</p>

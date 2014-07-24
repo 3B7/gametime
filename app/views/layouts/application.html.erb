@@ -11,6 +11,7 @@
       <a href='<%= root_url %>'><img src="/gfx/roarlogo.png"></a>
       <span>Stocktwits Clone</span>
         <% if current_user %>
+          <%= link_to "Public Roars", roars_path %>
           <%= link_to "Log out", sessions_destroy_path %>
         <% else %>
           <%= form_tag sessions_create_path do %>

@@ -1,0 +1,26 @@
+<% if current_user %>
+<div id="createRoar" class="panel right">
+  <h1>Create a Roar</h1>
+  <p>
+  <%= form_for @roar do |f| %>
+    <%= f.text_area :content, class: 'roarText' %>
+    <%= f.submit "Roar!" %>
+  <% end %>
+  </p>
+</div>
+<% end %>
+<div class="panel left">
+  <h1>Public Roars</h1>
+  <% @roars.each do |roar| %>
+    <div class="roarWrapper">
+      <a href="<%= user_path roar.user %>">
+        <img class="avatar" src="<%= roar.user.avatar_url %>">
+        <span class="name"><%= roar.user.name %></span>
+      </a>
+      @<%= roar.user.username %>
+      <span class="time"><%= time_ago_in_words(roar.created_at) %></span>
+      <p><%= roar.content %></p>
+    </div>
+  <% end %>
+</div>
+
