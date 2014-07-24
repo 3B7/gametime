@@ -1,4 +1,6 @@
 Gametime::Application.routes.draw do
+  resources :relationships
+
   resources :roars
 
   get "sessions/new"
